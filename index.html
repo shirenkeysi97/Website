@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>✨ Ayat Inspiratif Harian ✨</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Sidebar Bible Plan -->
   <div class="sidebar">
     <h2>📖 Bible Reading Plan</h2>
     <p class="plan-date">15 Nov – 31 Des 2025</p>
-    <div id="plan-container" class="plan"></div>
+
+    <div class="plan-section">
+      <h3>📅 November</h3>
+      <div id="november-plan" class="plan"></div>
+    </div>
+
+    <div class="plan-section">
+      <h3>🎄 Desember</h3>
+      <div id="december-plan" class="plan"></div>
+    </div>
   </div>
 
   <!-- Konten Utama -->
@@ -25,7 +34,7 @@
 
     <div class="input-section">
       <h3>Tambahkan Ayat Favorit Anda ✍️</h3>
-      <input type="text" id="name" placeholder="Masukkan nama Anda...">
+      <input type="text" id="name" placeholder="Masukkan nama Anda..." />
       <textarea id="verseInput" rows="3" placeholder="Tulis ayat favorit Anda di sini..."></textarea>
       <button onclick="addVerse()">Tambahkan</button>
       <div id="customVerses"></div>
