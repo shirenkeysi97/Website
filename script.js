@@ -3,7 +3,7 @@ const verses = document.querySelectorAll('.verse');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('show'), index * 300);
+      setTimeout(() => entry.target.classList.add('show'), index * 200);
     }
   });
 });
@@ -16,7 +16,7 @@ function addCustomVerse() {
   const display = document.getElementById('displayCustom');
 
   if (name && text) {
-    display.innerHTML = `<strong>${name}</strong> menulis: <br><em>"${text}"</em>`;
+    display.innerHTML = `<strong>${name}</strong> menulis:<br><em>"${text}"</em>`;
     display.style.display = 'block';
   } else {
     alert('Mohon isi nama dan ayat terlebih dahulu.');
@@ -40,6 +40,7 @@ while (startDate <= endDate) {
   const dateStr = startDate.toLocaleDateString('id-ID', { day: '2-digit', month: 'short' });
   const randomBook = books[Math.floor(Math.random() * books.length)];
   const randomChapter = Math.floor(Math.random() * 40) + 1;
+
   const bubble = document.createElement('div');
   bubble.className = 'plan-bubble';
   bubble.textContent = `${dateStr}: ${randomBook} ${randomChapter}`;
