@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  background: linear-gradient(120deg, #2e026d, #1b1a55, #5c51ff);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Sidebar Reading Plan */
+.sidebar {
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  height: 100vh;
+  overflow-y: scroll;
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  position: fixed;
+  left: 0;
+  top: 0;
+  animation: fadeInLeft 1.2s ease;
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.sidebar h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.plan {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.plan-bubble {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  padding: 10px 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.plan-bubble:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+.plan-bubble.checked {
+  background: rgba(255, 255, 255, 0.4);
+  color: #00ffb3;
+  border-color: #00ffb3;
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+/* Main Content */
+.content {
+  margin-left: 320px;
+  padding: 40px;
+  flex: 1;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.3rem;
+  color: #fff;
+}
+
+.verse {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 20px;
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.verse.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Input Section */
+.input-section {
+  margin-top: 40px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 20px;
+  animation: fadeInUp 1.5s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+input, textarea, button {
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 8px;
+  width: 80%;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  background-color: #5c51ff;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #7f73ff;
+}
+
+.custom-verse {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}

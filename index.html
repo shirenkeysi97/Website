@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inspirasi Ayat Harian</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Sidebar: Bible Reading Plan -->
+  <div class="sidebar">
+    <h2>📖 Bible Reading Plan</h2>
+    <p style="text-align:center; font-size:0.85rem; opacity:0.8;">15 Nov – 31 Des 2025</p>
+    <div class="plan" id="readingPlan"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>✨ Ayat Inspiratif Harian ✨</h1>
+
+    <div class="verse">"Aku dapat melakukan segala sesuatu di dalam Dia yang memberi kekuatan kepadaku." — Filipi 4:13</div>
+    <div class="verse">"Tuhan adalah gembalaku, takkan kekurangan aku." — Mazmur 23:1</div>
+    <div class="verse">"Kasihilah sesamamu manusia seperti dirimu sendiri." — Matius 22:39</div>
+    <div class="verse">"Sebab Aku ini mengetahui rancangan-rancangan apa yang ada pada-Ku mengenai kamu." — Yeremia 29:11</div>
+
+    <!-- Nama dan Ayat Custom -->
+    <div class="input-section">
+      <h3>Tambahkan Ayat & Nama Anda ✍️</h3>
+      <input type="text" id="userName" placeholder="Masukkan nama Anda..." />
+      <textarea id="customVerse" rows="3" placeholder="Tulis ayat favorit Anda di sini..."></textarea><br>
+      <button onclick="addCustomVerse()">Tambahkan</button>
+      <div id="displayCustom" class="custom-verse" style="display:none;"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
