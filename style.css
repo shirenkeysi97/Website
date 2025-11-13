@@ -1,266 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-/* === BASE === */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   display: flex;
-  flex-direction: row;
-  background: linear-gradient(120deg, #2e026d, #1b1a55, #5c51ff);
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, #2e1760, #6c48c5);
   color: white;
-  overflow-x: hidden;
-  min-height: 100vh;
 }
 
-/* === SIDEBAR (Bible Plan) === */
+/* Sidebar */
 .sidebar {
-  width: 300px;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
   padding: 20px;
-  height: 100vh;
-  overflow-y: auto;
-  border-right: 2px solid rgba(255, 255, 255, 0.2);
-  position: fixed;
-  left: 0;
-  top: 0;
-  animation: fadeInLeft 1.2s ease;
-}
-
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
+  margin: 10px;
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  height: fit-content;
+  text-align: center;
 }
 
 .sidebar h2 {
-  text-align: center;
+  font-size: 1.3rem;
   color: #fff;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-}
-
-.plan-date {
-  text-align: center;
-  font-size: 0.85rem;
-  opacity: 0.8;
 }
 
 .plan {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   justify-content: center;
+  gap: 8px;
   margin-top: 10px;
 }
 
 .plan-bubble {
-  background: rgba(255, 255, 255, 0.15);
+  background: #b69df0;
   color: #fff;
-  border: 2px solid transparent;
-  border-radius: 50px;
-  padding: 10px 15px;
-  text-align: center;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 0.9rem;
-  user-select: none;
+  transition: 0.3s;
+  font-weight: bold;
 }
 
 .plan-bubble:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-3px);
+  background: #fff;
+  color: #4a2e8e;
+  transform: scale(1.05);
 }
 
 .plan-bubble.checked {
-  background: rgba(255, 255, 255, 0.4);
-  color: #00ffb3;
-  border-color: #00ffb3;
-  text-decoration: line-through;
-  font-weight: 600;
+  background: #00e676;
+  color: #2e1760;
 }
 
-/* === MAIN CONTENT === */
+/* Tooltip ayat */
+.tooltip {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #fff;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Konten utama */
 .content {
-  margin-left: 320px;
-  padding: 40px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 3;
+  padding: 20px;
+  margin: 10px;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 2.3rem;
-  color: #fff;
+  font-size: 2rem;
 }
 
-/* === VERSE === */
 .verse {
   background: rgba(255, 255, 255, 0.12);
-  padding: 22px;
-  border-radius: 18px;
-  margin: 15px auto;
-  width: 95%;
-  max-width: 650px;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 10px 0;
   text-align: center;
-  line-height: 1.6;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  font-size: 1.1rem;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
-.verse.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* === INPUT SECTION === */
+/* Form input ayat */
 .input-section {
-  margin: 45px auto;
-  text-align: center;
-  background: linear-gradient(160deg, rgba(255,255,255,0.12), rgba(255,255,255,0.08));
-  padding: 25px 20px 35px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
   border-radius: 20px;
-  max-width: 650px;
-  width: 95%;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: fadeInUp 1.5s ease;
+  margin-top: 25px;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.input-section h3 {
-  color: #fff;
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-}
-
-.input-section input,
-.input-section textarea {
-  width: 90%;
-  max-width: 500px;
-  padding: 12px;
+.input-section input, .input-section textarea {
+  width: 100%;
   border: none;
   border-radius: 10px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
-  margin-bottom: 12px;
-  text-align: center;
-  box-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
-  transition: all 0.3s ease;
-}
-
-.input-section input:focus,
-.input-section textarea:focus {
-  outline: none;
-  box-shadow: 0 0 8px #7f73ff;
-  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .input-section button {
-  width: 90%;
-  max-width: 500px;
-  background: #5c51ff;
-  color: #fff;
-  padding: 12px;
+  width: 100%;
+  background: #fff;
+  color: #4a2e8e;
+  font-weight: bold;
   border: none;
   border-radius: 10px;
-  font-weight: 600;
-  font-size: 1rem;
+  padding: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 5px;
 }
 
 .input-section button:hover {
-  background: #7f73ff;
-  transform: scale(1.03);
+  background: #b69df0;
+  color: white;
 }
 
 .custom-verse {
-  margin-top: 25px;
-  padding: 15px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  text-align: center;
-  max-width: 500px;
-  width: 90%;
-  color: #fff;
-  line-height: 1.5;
-  font-style: italic;
-}
-
-/* === SCROLLBAR === */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.3);
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
   border-radius: 10px;
 }
 
-/* === RESPONSIVE === */
+/* Responsif */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
     align-items: center;
   }
-
   .sidebar {
-    position: relative;
-    width: 90%;
-    height: auto;
-    border-right: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    margin-top: 20px;
+    max-width: 90%;
   }
-
   .content {
-    margin-left: 0;
-    padding: 20px;
-    align-items: center;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  .verse {
-    width: 100%;
-    font-size: 0.95rem;
-    padding: 18px;
-  }
-
-  .input-section {
-    width: 100%;
-    padding: 20px 15px 25px;
-  }
-
-  .input-section h3 {
-    font-size: 1.05rem;
-  }
-
-  .input-section input,
-  .input-section textarea,
-  .input-section button {
-    width: 100%;
-    font-size: 0.9rem;
-  }
-
-  .plan-bubble {
-    font-size: 0.8rem;
-    padding: 8px 12px;
+    max-width: 95%;
   }
 }
