@@ -46,16 +46,19 @@ body {
   width: 95%;
   text-align: center;
   transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
 }
 
 .plan-item:hover {
   background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .plan-date-text {
   font-weight: bold;
   color: #fff;
+  font-size: 1rem;
 }
 
 .plan-verse {
@@ -63,6 +66,21 @@ body {
   color: #f0f0f0;
   margin-top: 6px;
   line-height: 1.4em;
+}
+
+.checkmark {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 1.2rem;
+  color: #00ff9c;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.checked .checkmark {
+  display: block;
+  opacity: 1;
 }
 
 /* Konten utama */
@@ -129,7 +147,6 @@ h1 {
   border-radius: 10px;
 }
 
-/* Animasi & responsif */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
