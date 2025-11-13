@@ -1,35 +1,82 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inspirasi Ayat Harian</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayat Inspiratif Harian ✨</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Sidebar: Bible Reading Plan -->
+  <!-- SIDEBAR BIBLE PLAN -->
   <div class="sidebar">
     <h2>📖 Bible Reading Plan</h2>
     <p class="plan-date">15 Nov – 31 Des 2025</p>
-    <div class="plan" id="readingPlan"></div>
+    <div class="plan">
+      <div class="plan-bubble">15 Nov</div>
+      <div class="plan-bubble">16 Nov</div>
+      <div class="plan-bubble">17 Nov</div>
+      <div class="plan-bubble">18 Nov</div>
+      <div class="plan-bubble">19 Nov</div>
+      <div class="plan-bubble">20 Nov</div>
+      <div class="plan-bubble">21 Nov</div>
+      <div class="plan-bubble">22 Nov</div>
+      <div class="plan-bubble">23 Nov</div>
+      <div class="plan-bubble">24 Nov</div>
+      <div class="plan-bubble">25 Nov</div>
+      <div class="plan-bubble">26 Nov</div>
+      <div class="plan-bubble">27 Nov</div>
+      <div class="plan-bubble">28 Nov</div>
+      <div class="plan-bubble">29 Nov</div>
+      <div class="plan-bubble">30 Nov</div>
+      <div class="plan-bubble">1 Des</div>
+      <div class="plan-bubble">2 Des</div>
+      <div class="plan-bubble">3 Des</div>
+      <div class="plan-bubble">4 Des</div>
+      <div class="plan-bubble">5 Des</div>
+      <div class="plan-bubble">6 Des</div>
+      <div class="plan-bubble">7 Des</div>
+      <div class="plan-bubble">8 Des</div>
+      <div class="plan-bubble">9 Des</div>
+      <div class="plan-bubble">10 Des</div>
+      <div class="plan-bubble">11 Des</div>
+      <div class="plan-bubble">12 Des</div>
+      <div class="plan-bubble">13 Des</div>
+      <div class="plan-bubble">14 Des</div>
+      <div class="plan-bubble">15 Des</div>
+      <div class="plan-bubble">16 Des</div>
+      <div class="plan-bubble">17 Des</div>
+      <div class="plan-bubble">18 Des</div>
+      <div class="plan-bubble">19 Des</div>
+      <div class="plan-bubble">20 Des</div>
+      <div class="plan-bubble">21 Des</div>
+      <div class="plan-bubble">22 Des</div>
+      <div class="plan-bubble">23 Des</div>
+      <div class="plan-bubble">24 Des</div>
+      <div class="plan-bubble">25 Des</div>
+      <div class="plan-bubble">26 Des</div>
+      <div class="plan-bubble">27 Des</div>
+      <div class="plan-bubble">28 Des</div>
+      <div class="plan-bubble">29 Des</div>
+      <div class="plan-bubble">30 Des</div>
+      <div class="plan-bubble">31 Des</div>
+    </div>
   </div>
 
-  <!-- Main Content -->
+  <!-- MAIN CONTENT -->
   <div class="content">
     <h1>✨ Ayat Inspiratif Harian ✨</h1>
 
-    <div class="verse">"Aku dapat melakukan segala sesuatu di dalam Dia yang memberi kekuatan kepadaku." — Filipi 4:13</div>
-    <div class="verse">"Tuhan adalah gembalaku, takkan kekurangan aku." — Mazmur 23:1</div>
-    <div class="verse">"Kasihilah sesamamu manusia seperti dirimu sendiri." — Matius 22:39</div>
-    <div class="verse">"Sebab Aku ini mengetahui rancangan-rancangan apa yang ada pada-Ku mengenai kamu." — Yeremia 29:11</div>
+    <div class="verse show">"Aku dapat melakukan segala sesuatu di dalam Dia yang memberi kekuatan kepadaku." — Filipi 4:13</div>
+    <div class="verse show">"Tuhan adalah gembalaku, takkan kekurangan aku." — Mazmur 23:1</div>
+    <div class="verse show">"Kasihilah sesamamu manusia seperti dirimu sendiri." — Matius 22:39</div>
+    <div class="verse show">"Sebab Aku ini mengetahui rancangan-rancangan apa yang ada pada-Ku mengenai kamu." — Yeremia 29:11</div>
 
-    <!-- Nama dan Ayat Custom -->
     <div class="input-section">
       <h3>Tambahkan Ayat & Nama Anda ✍️</h3>
-      <input type="text" id="userName" placeholder="Masukkan nama Anda..." />
-      <textarea id="customVerse" rows="3" placeholder="Tulis ayat favorit Anda di sini..."></textarea><br>
-      <button onclick="addCustomVerse()">Tambahkan</button>
-      <div id="displayCustom" class="custom-verse" style="display:none;"></div>
+      <input type="text" id="name" placeholder="Masukkan nama Anda...">
+      <textarea id="verseInput" rows="3" placeholder="Tulis ayat favorit Anda di sini..."></textarea>
+      <button onclick="addVerse()">Tambahkan</button>
+      <div id="customVerses"></div>
     </div>
   </div>
 
