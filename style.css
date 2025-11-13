@@ -10,70 +10,59 @@ body {
 /* Sidebar */
 .sidebar {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   padding: 20px;
   margin: 10px;
   flex: 1;
-  min-width: 250px;
-  max-width: 300px;
+  min-width: 270px;
+  max-width: 320px;
   height: fit-content;
   text-align: center;
 }
 
 .sidebar h2 {
   font-size: 1.3rem;
-  color: #fff;
+  margin-bottom: 5px;
+}
+
+.plan-date {
+  color: #eee;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
 }
 
 .plan {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.plan-bubble {
-  background: #b69df0;
-  color: #fff;
-  border-radius: 50%;
-  width: 55px;
-  height: 55px;
-  display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  cursor: pointer;
-  transition: 0.3s;
-  font-weight: bold;
+  gap: 12px;
 }
 
-.plan-bubble:hover {
-  background: #fff;
-  color: #4a2e8e;
-  transform: scale(1.05);
-}
-
-.plan-bubble.checked {
-  background: #00e676;
-  color: #2e1760;
-}
-
-/* Tooltip ayat */
-.tooltip {
+.plan-item {
   background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 12px;
-  padding: 10px;
-  margin-top: 5px;
-  font-size: 0.9rem;
-  color: #fff;
-  animation: fadeIn 0.3s ease-in-out;
+  border-radius: 15px;
+  padding: 12px;
+  width: 95%;
+  text-align: center;
+  transition: all 0.3s ease;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+.plan-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+}
+
+.plan-date-text {
+  font-weight: bold;
+  color: #fff;
+}
+
+.plan-verse {
+  font-size: 0.9rem;
+  color: #f0f0f0;
+  margin-top: 6px;
+  line-height: 1.4em;
 }
 
 /* Konten utama */
@@ -86,6 +75,7 @@ body {
 h1 {
   text-align: center;
   font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .verse {
@@ -106,7 +96,8 @@ h1 {
   margin-top: 25px;
 }
 
-.input-section input, .input-section textarea {
+.input-section input,
+.input-section textarea {
   width: 100%;
   border: none;
   border-radius: 10px;
@@ -123,6 +114,7 @@ h1 {
   border-radius: 10px;
   padding: 10px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .input-section button:hover {
@@ -137,7 +129,12 @@ h1 {
   border-radius: 10px;
 }
 
-/* Responsif */
+/* Animasi & responsif */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 768px) {
   body {
     flex-direction: column;
