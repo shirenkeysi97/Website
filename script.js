@@ -12,11 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const planContainer = document.getElementById("plan-container");
 
+  // Safety check jika terjadi loading terlalu cepat
+  if (!planContainer) {
+    console.error("ERROR: plan-container tidak ditemukan!");
+    return;
+  }
+
   // =============================
   // RANGE TANGGAL
   // =============================
-  const startDate = new Date(2025, 10, 15);
-  const endDate = new Date(2025, 11, 31);
+  const startDate = new Date(2025, 10, 15); 
+  const endDate = new Date(2025, 11, 31);   
 
   // =============================
   // FUNGSI RANDOM AYAT
@@ -95,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("verseInput").value = "";
   }
 
+  // Agar tombol di HTML bisa memanggil fungsi ini
   window.addVerse = addVerse;
 
   // =============================
